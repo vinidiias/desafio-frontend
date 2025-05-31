@@ -1,4 +1,4 @@
-export default async function Home() {
+export default function Home() {
   return (
     <div className="m-auto">
       <h1 className="text-3xl font-medium">Bem vindo ao desafio!</h1>
