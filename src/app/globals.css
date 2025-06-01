@@ -28,3 +28,36 @@ body,
   box-sizing: border-box;
   height: 100vh;
 }
+
+/* Para elementos específicos com scroll */
+.custom-scroll {
+  overflow-y: auto; /* Garante que a barra de rolagem apareça */
+  scrollbar-width: thin; /* Firefox */
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 5px; /* Largura da barra de rolagem para este elemento */
+  border-radius: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: var(--color-gray-100); /* Tailwind indigo-100 */
+  border-radius: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-gray-500); /* Tailwind indigo-600 */
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400); /* Tailwind indigo-700 */
+}
+
+select {
+  color: var(--color-gray-500);
+}
+
+option {
+  color: var(--color-gray-500); /* Exemplo: Cor da fonte do Tailwind text-gray-900 */
+}
