@@ -14,7 +14,7 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <Navbar />
           <Toolbar />
-          <main className="flex flex-col h-screen">{children}</main>
+          <main className="flex justify-center h-[calc(100%-64px)]">{children}</main>
         </AppRouterCacheProvider>
       </body>
     </html>
