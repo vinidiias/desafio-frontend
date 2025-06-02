@@ -7,10 +7,6 @@ interface SelectProps {
   id?: string;
   name?: string;
   options?: OptionProps[];
-  defaultValue?: {
-    label: string;
-    value: string | number;
-  };
   value?: string | number;
   className?: string;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -20,7 +16,6 @@ export const Select: React.FC<SelectProps> = ({
   id,
   name,
   options,
-  defaultValue,
   onChange,
   value,
   className = "col-start-1 row-start-1 rounded-sm border-1 border-gray-200 shadow-xs grow py-[5.5] pr-7 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 appearance-none custom-scroll",
@@ -33,13 +28,9 @@ export const Select: React.FC<SelectProps> = ({
         name={name}
         value={value}
         onChange={onChange}
-        defaultValue=""
         className={className}
         {...props}
       >
-        {defaultValue && (
-          <option value={defaultValue.value}>{defaultValue.label}</option>
-        )}
         {options?.map((op, index) => (
           <option key={`${op}-${index}`} value={op.value}>
             {op.label}
