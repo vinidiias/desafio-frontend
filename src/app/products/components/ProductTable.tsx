@@ -131,6 +131,16 @@ export const ProductTable: React.FC<ProductTableProps> = ({
   );
 
   const [data] = useState<Product[]>(allProducts);
+   const categoryOptions = [
+    { label: "All", value: "" }, // Primeira opção: "All", com valor vazio
+    ...(Array.isArray(allCategories) // Verifica se allCategories é um array
+      ? allCategories.map((cat: Category) => ({ // Mapeia as categorias reais
+          label: cat.name, // Ajuste para o nome da categoria real
+          value: cat.slug, // Ajuste para o slug da categoria real
+        }))
+      : []
+    ),
+  ];
 
   const table = useReactTable({
     data,
@@ -180,20 +190,13 @@ export const ProductTable: React.FC<ProductTableProps> = ({
           {columnCategory.column.getCanFilter() ? (
             <div>
               <Select
-                defaultValue={{
-                  label: "All",
-                  value: "",
-                }}
                 value={(columnCategory.column.getFilterValue() ?? "") as string}
                 onChange={(e) =>
                   columnCategory.column.setFilterValue(
                     e.target.value || undefined
                   )
                 }
-                options={allCategories.map((cat) => ({
-                  label: cat.name,
-                  value: cat.slug,
-                }))}
+                options={categoryOptions}
               />
             </div>
           ) : null}
