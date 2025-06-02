@@ -12,6 +12,7 @@ interface SelectProps {
     value: string | number;
   };
   value?: string | number;
+  className?: string;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
@@ -22,6 +23,7 @@ export const Select: React.FC<SelectProps> = ({
   defaultValue,
   onChange,
   value,
+  className = "col-start-1 row-start-1 rounded-sm border-1 border-gray-200 shadow-xs grow py-[5.5] pr-7 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 appearance-none custom-scroll",
   ...props
 }) => {
   return (
@@ -32,7 +34,7 @@ export const Select: React.FC<SelectProps> = ({
         value={value}
         onChange={onChange}
         defaultValue=""
-        className = "col-start-1 row-start-1 rounded-sm border-1 border-gray-500/50 shadow-sm min-w-0 grow py-1 pr-7 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 appearance-none custom-scroll"
+        className={className}
         {...props}
       >
         {defaultValue && (
