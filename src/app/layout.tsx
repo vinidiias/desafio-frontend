@@ -1,6 +1,6 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/app/components/Navbar";
 import { Toolbar } from "@mui/material";
 
 export default function RootLayout({
