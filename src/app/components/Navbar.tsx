@@ -24,7 +24,7 @@ export default function Navbar() {
               className="text-base font-medium normal-case no-underline"
               onClick={() => router.push("/products")}
             >
-              Products
+              Produtos
             </Button>
           </div>
         </div>

@@ -132,11 +132,11 @@ export const ProductTable: React.FC<ProductTableProps> = ({
 
   const [data] = useState<Product[]>(allProducts);
    const categoryOptions = [
-    { label: "All", value: "" }, // Primeira opção: "All", com valor vazio
-    ...(Array.isArray(allCategories) // Verifica se allCategories é um array
-      ? allCategories.map((cat: Category) => ({ // Mapeia as categorias reais
-          label: cat.name, // Ajuste para o nome da categoria real
-          value: cat.slug, // Ajuste para o slug da categoria real
+    { label: "Todos", value: "" },
+    ...(Array.isArray(allCategories)
+      ? allCategories.map((cat: Category) => ({
+          label: cat.name,
+          value: cat.slug,
         }))
       : []
     ),
